@@ -20,20 +20,27 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+from collections import OrderedDict, Counter
 
-class ToyRecommend:
+
+class OrderedCounter(Counter, OrderedDict):
+    pass
+
+
+class RankRecommend:
     def __init__(self):
         self.trained = None
 
     def fit(self, dataset):
-        """The method for fit model for given training dataset.
+        """The method for fit model for given training dataset based on
+        frequencies.
 
         Args:
-            dataset (SimpleToy): Training dataset
+            dataset (ToyDataset): Training dataset
                 as an instance of SimpleToy class.
 
         """
-        self.trained = dataset
+        self.trained = self.sort_by_occurence(dataset)
 
     def predict(self, key, top_n=None):
         """The method for predict top_n recommendations for given key
@@ -50,5 +57,13 @@ class ToyRecommend:
 
         """
         if not top_n:
-            top_n = self.trained.shape[1]
+            top_n = len(self.trained[0])
         return self.trained[key][:top_n]
+
+    def sort_by_occurence(self, dataset):
+        output = dict()
+        for k, v in dataset.items():
+            c = OrderedCounter(v)
+            keys = list(c)
+            output.update({k: sorted(c, key=lambda x: (-c[x], keys.index(x)))})
+        return output
