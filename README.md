@@ -47,7 +47,7 @@ rec.predict(0)
 There is a sample code using this module 
 with command line arguments.  
 
-```bash
+```commandline
 $ git clone https://github.com/yukoga/recommend_sample1.git
 $ cd recommend_sample1
 $ python example/sample1.py 
@@ -60,7 +60,7 @@ Top 5 recommendations for item 0 is [4, 1, 4, 4, 3].
 You can set the argument **key** to specify item key 
 and **top_n** to specify how many recommendations you get.
 
-```bash
+```commandline
 $ python example/sample1.py --key=1 --top_n=3
 
 Training data loaded.
