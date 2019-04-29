@@ -6,7 +6,8 @@ As a first step, you will learn how to organize software stuck for a simple reco
 ## The first example: pre-defined model  
 The first example of this sample code provides a quite simple recommendation engine 
 just return recommendations based on pre-defined model.  
-Pre-defined model contains a simple toy dataset in form of python dict object.  
+Pre-defined model just returns recommendation results from training dataset 
+for specified product key. 
 
 
 ## Project structure of first example
