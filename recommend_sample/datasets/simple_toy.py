@@ -23,7 +23,6 @@ from __future__ import print_function
 
 class SimpleToy(dict):
     def __init__(self):
-        super().__init__()
         self.update({
             0: [4, 1, 4, 4, 3],
             1: [4, 2, 4, 3, 2],
@@ -31,6 +30,7 @@ class SimpleToy(dict):
             3: [1, 0, 2, 1, 1],
             4: [3, 0, 1, 1, 0]
         })
+        super().__init__()
 
     @property
     def shape(self):
