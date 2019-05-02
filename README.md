@@ -56,7 +56,7 @@ $ python example/sample2.py
 
 Training data loaded.
 Finish training for recommendations
-Top 20 recommendations for item 0 is [2, 1, 3, 5, 4].  
+Top 20 recommendations for item 0 is [3, 4, 1, 5, 2].  
 ```  
 
 With the optional argument **all**, you will get all recommendation results 
@@ -67,7 +67,7 @@ $ python example/sample2.py --all
 
 Training data loaded.
 Finish training for recommendations
-Top 20 recommendations for item 0 is [2, 1, 3, 5, 4].
+Top 20 recommendations for item 0 is [3, 4, 1, 5, 2].
 
 
 /*** training dataset ***/
@@ -80,11 +80,11 @@ Top 20 recommendations for item 0 is [2, 1, 3, 5, 4].
 
 
 /*** recommendation results ***/
-Recommendations for item 0 is [2, 1, 3, 5, 4].
-Recommendations for item 1 is [5, 2, 4, 3, 0].
-Recommendations for item 2 is [3, 4, 5, 0, 1].
-Recommendations for item 3 is [1, 4, 5, 0, 2].
-Recommendations for item 4 is [3, 1, 0, 2, 5].
-Recommendations for item 5 is [4, 3, 1, 0].  
+Recommendations for item 0 is [3, 4, 1, 5, 2].
+Recommendations for item 1 is [3, 4, 5, 2, 0].
+Recommendations for item 2 is [3, 4, 1, 5, 0].
+Recommendations for item 3 is [4, 1, 5, 2, 0].
+Recommendations for item 4 is [3, 1, 5, 2, 0].
+Recommendations for item 5 is [3, 4, 1, 2, 0].
 ```  
 

@@ -62,8 +62,14 @@ class RankRecommend:
 
     def sort_by_occurence(self, dataset):
         output = dict()
-        for k, v in dataset.items():
-            c = OrderedCounter(v)
-            keys = list(c)
-            output.update({k: sorted(c, key=lambda x: (-c[x], keys.index(x)))})
+        keys = dataset.keys()
+        data_list = sum(list(dataset.values()), [])
+        c = OrderedCounter(data_list)
+        for k in keys:
+            l = c.copy()
+            _ = l.pop(k)
+            ks = list(l)
+            output.update({
+                k: sorted(l, key=lambda x: (-l[x], ks.index(x)))
+            })
         return output
